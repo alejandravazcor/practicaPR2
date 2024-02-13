@@ -34,4 +34,3 @@ public class Matematicas{
         }
         return 4 * (double) aciertos / (double) dardosDisponibles;
     }}
-gi
