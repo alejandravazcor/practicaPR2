@@ -1,4 +1,4 @@
-# practicaPR2
+# PrácticaPR2
 ## Instalación
 Para instalar el programa debe escribir "make jar" y tener instalado el siguiente software:
 -Jar
