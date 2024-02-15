@@ -19,3 +19,6 @@ El_script_ definido en el fichero `makefile`está pensado para funcionar en Linu
     make jar
 ### Aproximacion al número pi y ejecución
      java -jar pi.jar <numero de pasos>
+## Licencia
+Copyright [2024] [Alejandra Vazquez Corbella]
+Este proyecto esta licenciado bajo la [Licencia Apache 2.0](https://www.apache.org/license/LICENSE-2.0). Consulte el archivo [LICENSE](LICENSE.txt) para obtener más detalles.
