@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.*;
 import java.util.random.RandomGenerator;
 
-public class Matematicas{
+public class Matematicas {
     /**
      * * Genera una aproximación al número Pi mediante el método de
      * * Montecarlo. El parámetro `pasos` indica el número de puntos
@@ -17,8 +17,8 @@ public class Matematicas{
      * * tengo que generar dos numeros aleatorios entre el 0 y 1 (random) y eso es el lanzar dardos ¿ como se generan numero s aleatorios en java?
      * * ¿Como se si el dardo ha caido dentro si el centro esta en o,5 , 0,5  tengo que coger el si me sale menor o igual que el radio es que me ha caido dentro y si me sale mayor o igual qeu el radio es que me ha caido fuera
      * * la programacions del segundo rombo es calcular el radio y luego pasar al sigueinte paso
-     * */
-    public static double generarNumeroPiIterativo(long dardosDisponibles){
+     */
+    public static double generarNumeroPiIterativo(long dardosDisponibles) {
 
         Random generadorNumerosAleatorios = new Random();
         long aciertos = 0;
@@ -28,9 +28,10 @@ public class Matematicas{
             double y = generadorNumerosAleatorios.nextDouble();
             double radio = Math.sqrt(x * x + y * y);
             if (radio <= 1.0) {
-                aciertos = aciertos + 1;
+                aciertos++;
 
             }
         }
-        return 4 * (double) aciertos / (double) dardosDisponibles;
-    }}
+        return 4.0 * (double) aciertos / (double) dardosDisponibles;
+    }
+}
