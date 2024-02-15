@@ -1,0 +1,5 @@
+practica1 pr2.iml
+*.jar
+bin
+.*
+!/.gitignore
