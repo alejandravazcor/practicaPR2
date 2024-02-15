@@ -1,6 +1,6 @@
-package mates.aplicacion;
+package aplicacion;
 
-import mates.Matematicas;
+import mates.mates.Matematicas;
 
 public class Principal {
     public static void main(String[] args) {

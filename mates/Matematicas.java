@@ -1,4 +1,4 @@
-package mates;
+package mates.mates;
 
 import java.util.Random;
 import java.util.*;
