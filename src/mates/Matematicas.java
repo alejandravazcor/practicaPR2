@@ -4,6 +4,9 @@ import java.util.Random;
 import java.util.*;
 import java.util.random.RandomGenerator;
 
+/**
+ * La clase Matematicas proporciona métodos para cálculos matemáticos.
+ */
 public class Matematicas {
     /**
      * Genera una estimación de la constante matemática Pi utilizando un método recursivo.
