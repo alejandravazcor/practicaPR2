@@ -21,5 +21,5 @@ El_script_ definido en el fichero `makefile`está pensado para funcionar en Linu
      java -jar pi.jar <numero de pasos>
      Ejemplo: java -jar pi.jar 16
 ## Licencia
-Copyright [2024] [Alejandra Vázquez Corbella]
+Copyright [2024] [Alejandra Vázquez Corbella y Manuel Enrique Tabasco García]
 Este proyecto esta licenciado bajo la [Licencia Apache 2.0](https://www.apache.org/license/LICENSE-2.0). Consulte el archivo [LICENSE](LICENSE.txt) para obtener más detalles.
