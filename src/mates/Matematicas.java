@@ -1,4 +1,4 @@
-package mates.mates;
+package mates;
 
 import java.util.Random;
 import java.util.*;
@@ -18,20 +18,23 @@ public class Matematicas {
      * * ¿Como se si el dardo ha caido dentro si el centro esta en o,5 , 0,5  tengo que coger el si me sale menor o igual que el radio es que me ha caido dentro y si me sale mayor o igual qeu el radio es que me ha caido fuera
      * * la programacions del segundo rombo es calcular el radio y luego pasar al sigueinte paso
      */
-    public static double generarNumeroPiIterativo(long dardosDisponibles) {
-
-        Random generadorNumerosAleatorios = new Random();
-        long aciertos = 0;
-        for (long i = 0; i < dardosDisponibles; i++) {
-
-            double x = generadorNumerosAleatorios.nextDouble();
-            double y = generadorNumerosAleatorios.nextDouble();
-            double radio = Math.sqrt(x * x + y * y);
-            if (radio <= 1.0) {
-                aciertos++;
-
-            }
-        }
-        return 4.0 * (double) aciertos / (double) dardosDisponibles;
+    public static double generarNumeroPiRecursivo(long dardosDisponibles) {
+        return generarNumeroPiRecursivoAux(dardosDisponibles, 0, 0);
     }
-}
+
+    public static double generarNumeroPiRecursivoAux(long dardosDisponibles, long lanzamientos, long aciertos) {
+        if (lanzamientos < dardosDisponibles){ 
+                double x = Math.random();
+                double y = Math.random();
+                double radio = Math.sqrt(x * x + y * y);
+
+                if (radio <= 1.0) {
+                    aciertos++;
+                }
+
+                return generarNumeroPiRecursivoAux(dardosDisponibles, lanzamientos + 1, aciertos);
+            } else {
+                return 4.0 * (double) aciertos / (double) dardosDisponibles;
+            }
+     	 }
+	}

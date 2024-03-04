@@ -1,14 +1,14 @@
 package aplicacion;
 
-import mates.mates.Matematicas;
+import mates.Matematicas;
 
 public class Principal {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         if (args.length != 1) {
             System.out.println("Uso: java Principal <numero_de_pasos>");
             System.exit(1);
         }
         long pasos = Long.parseLong(args[0]);
-        System.out.println("EL numero Pi es " + Matematicas.generarNumeroPiIterativo(pasos));
+        System.out.println("El numero Pi es " + Matematicas.generarNumeroPiRecursivo(pasos));
     }
 }
