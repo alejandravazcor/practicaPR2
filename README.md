@@ -20,6 +20,8 @@ El_script_ definido en el fichero `makefile`está pensado para funcionar en Linu
 ### Aproximacion al número pi y ejecución
      java -jar pi.jar <numero de pasos>
      Ejemplo: java -jar pi.jar 16
+### Estructura
+Existen dos clases: `Matematicas.java` en el paquete `mates` que contiene el método que realiza la simulación; y `Principal.java`en el paquete `aplicacion`que invoca el método de simulación
 ## Licencia
 Copyright [2024] [Alejandra Vázquez Corbella y Manuel Enrique Tabasco García]
 Este proyecto esta licenciado bajo la [Licencia Apache 2.0](https://www.apache.org/license/LICENSE-2.0). Consulte el archivo [LICENSE](LICENSE.txt) para obtener más detalles.
