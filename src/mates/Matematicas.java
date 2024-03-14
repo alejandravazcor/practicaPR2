@@ -2,23 +2,6 @@ package mates;
 
 import java.util.Random;
 import java.util.*;
-import java.util.random.RandomGenerator;
-
-/**
- * La clase Matematicas proporciona métodos para cálculos matemáticos.
- */
-public class Matematicas {
-    /**
-     * Genera una estimación de la constante matemática Pi utilizando un método recursivo.
-     *
-     * @param dardosDisponibles El número de dardos disponibles para la estimación.
-     * @return Una estimación de Pi basada en el método de Monte Carlo.
-     */
-
-
-package mates;
-
-import java.util.Random;
 
 public class Matematicas {
     /**
@@ -55,5 +38,5 @@ public class Matematicas {
         System.out.println("Aproximación de Pi utilizando Monte Carlo: " + piEstimado);
     }
 }
- }
+
 

@@ -20,6 +20,6 @@ public class Principal {
           // Convierte el argumento proporcionado a un valor numérico (cantidad de pasos).
         long pasos = Long.parseLong(args[0]);
           // Imprime la estimación de Pi basada en el número de pasos proporcionados.
-        System.out.println("El numero Pi es " + Matematicas.generarNumeroPiRecursivo(pasos));
+        System.out.println("El numero Pi es " + Matematicas.generarNumeroPiMontecarlo(pasos));
     }
 }
