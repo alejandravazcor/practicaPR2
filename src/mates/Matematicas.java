@@ -14,16 +14,29 @@ public class Matematicas {
      * @param dardosDisponibles El número de dardos disponibles para la estimación.
      * @return Una estimación de Pi basada en el método de Monte Carlo.
      */
+
+
+package mates;
+
+import java.util.Random;
+
+public class Matematicas {
+    /**
+     * Genera una aproximación al número Pi mediante el método de Montecarlo.
+     * El parámetro `dardosDisponibles` indica el número de puntos generados.
+     */
     public static double generarNumeroPiMontecarlo(long dardosDisponibles) {
-        long aciertos = ThreadLocalRandom.current().longs(dardosDisponibles, 0, Long.MAX_VALUE)
-                .parallel()
-                .filter(i -> {
-                    double x = ThreadLocalRandom.current().nextDouble();
-                    double y = ThreadLocalRandom.current().nextDouble();
-                    double radio = Math.sqrt(x * x + y * y);
-                    return radio <= 1.0;
-                })
-                .count();
+        Random random = new Random();
+        long aciertos = 0;
+
+        for (long i = 0; i < dardosDisponibles; i++) {
+            double x = random.nextDouble();
+            double y = random.nextDouble();
+            double radio = Math.sqrt(x * x + y * y);
+            if (radio <= 1.0) {
+                aciertos++;
+            }
+        }
 
         return 4.0 * (double) aciertos / (double) dardosDisponibles;
     }
@@ -36,4 +49,11 @@ public class Matematicas {
      * @return Una estimación de Pi basada en el método de Monte Carlo.
      */
 
-	}
+    public static void main(String[] args) {
+        long dardosDisponibles = 10000000;
+        double piEstimado = generarNumeroPiMontecarlo(dardosDisponibles);
+        System.out.println("Aproximación de Pi utilizando Monte Carlo: " + piEstimado);
+    }
+}
+ }
+
