@@ -14,8 +14,18 @@ public class Matematicas {
      * @param dardosDisponibles El número de dardos disponibles para la estimación.
      * @return Una estimación de Pi basada en el método de Monte Carlo.
      */
-    public static double generarNumeroPiRecursivo(long dardosDisponibles) {
-        return generarNumeroPiRecursivoAux(dardosDisponibles, 0, 0);
+    public static double generarNumeroPiMontecarlo(long dardosDisponibles) {
+        long aciertos = ThreadLocalRandom.current().longs(dardosDisponibles, 0, Long.MAX_VALUE)
+                .parallel()
+                .filter(i -> {
+                    double x = ThreadLocalRandom.current().nextDouble();
+                    double y = ThreadLocalRandom.current().nextDouble();
+                    double radio = Math.sqrt(x * x + y * y);
+                    return radio <= 1.0;
+                })
+                .count();
+
+        return 4.0 * (double) aciertos / (double) dardosDisponibles;
     }
 	/**
      * Método auxiliar para generar Pi de manera recursiva utilizando el método de Monte Carlo.
@@ -26,19 +36,4 @@ public class Matematicas {
      * @return Una estimación de Pi basada en el método de Monte Carlo.
      */
 
-    public static double generarNumeroPiRecursivoAux(long dardosDisponibles, long lanzamientos, long aciertos) {
-        if (lanzamientos < dardosDisponibles){ 
-                double x = Math.random();
-                double y = Math.random();
-                double radio = Math.sqrt(x * x + y * y);
-
-                if (radio <= 1.0) {
-                    aciertos++;
-                }
-
-                return generarNumeroPiRecursivoAux(dardosDisponibles, lanzamientos + 1, aciertos);
-            } else {
-                return 4.0 * (double) aciertos / (double) dardosDisponibles;
-            }
-     	 }
 	}
