@@ -8,6 +8,8 @@ public class Matematicas {
     /**
      * Genera una aproximación al número Pi mediante el método de Montecarlo.
      * El parámetro `dardosDisponibles` indica el número de puntos generados.
+	* @param dardosDisponibles El número de dardos disponibles para generar puntos.
+     * @return Una aproximación del valor de Pi.
      */
     public static double generarNumeroPiMontecarlo(long dardosDisponibles) {
         Random random = new Random();
