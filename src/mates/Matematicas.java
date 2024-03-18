@@ -4,6 +4,10 @@ import java.util.Random;
 import java.util.stream.LongStream;
 import java.util.*;
 
+/**
+ * Esta clase proporciona métodos para realizar cálculos matemáticos, incluida la estimación del número Pi
+ * mediante el método de Monte Carlo.
+ */
 public class Matematicas {
     /**
      * Genera una aproximación al número Pi mediante el método de Montecarlo.
