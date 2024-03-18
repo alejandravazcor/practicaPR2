@@ -1,6 +1,7 @@
 package mates;
 
 import java.util.Random;
+import java.util.stream.LongStream;
 import java.util.*;
 
 public class Matematicas {
@@ -10,33 +11,14 @@ public class Matematicas {
      */
     public static double generarNumeroPiMontecarlo(long dardosDisponibles) {
         Random random = new Random();
-        long aciertos = 0;
-
-        for (long i = 0; i < dardosDisponibles; i++) {
+	
+        long puntosDentroCirculo = LongStream.range(0, dardosDisponibles)
+	.filter(i -> {
             double x = random.nextDouble();
             double y = random.nextDouble();
-            double radio = Math.sqrt(x * x + y * y);
-            if (radio <= 1.0) {
-                aciertos++;
-            }
-        }
-
-        return 4.0 * (double) aciertos / (double) dardosDisponibles;
-    }
-	/**
-     * Método auxiliar para generar Pi de manera recursiva utilizando el método de Monte Carlo.
-     *
-     * @param dardosDisponibles El total de dardos disponibles para la estimación.
-     * @param lanzamientos      El número actual de lanzamientos de dardos.
-     * @param aciertos          El número actual de aciertos de dardos dentro del círculo unitario.
-     * @return Una estimación de Pi basada en el método de Monte Carlo.
-     */
-
-    public static void main(String[] args) {
-        long dardosDisponibles = 10000000;
-        double piEstimado = generarNumeroPiMontecarlo(dardosDisponibles);
-        System.out.println("Aproximación de Pi utilizando Monte Carlo: " + piEstimado);
-    }
-}
-
-
+            return x * x + y * y <= 1;
+             })
+             .count();
+            
+	return 4.0 * puntosDentroCirculo / dardosDisponibles;
+}}
