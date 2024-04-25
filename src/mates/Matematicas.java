@@ -2,9 +2,15 @@ package mates;
 
 import java.util.Scanner;
 
+<<<<<<< HEAD
 
 /**
  * Esta clase proporciona métodos para calcular la distancia de edición entre dos cadenas.
+=======
+/**
+ * Esta clase proporciona métodos para realizar cálculos matemáticos, incluida la estimación del número Pi
+ * mediante el método de Monte Carlo.
+>>>>>>> origin/main
  */
 public class Matematicas {
 
