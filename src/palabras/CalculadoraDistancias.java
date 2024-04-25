@@ -1,4 +1,4 @@
-package palabras;;
+package palabras;
 
 import java.util.Scanner;
 
